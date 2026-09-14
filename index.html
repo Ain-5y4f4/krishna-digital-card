@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -13,13 +14,17 @@
     <meta name="theme-color"
           content="#003b70">
 
+    <meta name="apple-mobile-web-app-capable"
+          content="yes">
+
     <title>Krishna Kumar | PKFZ</title>
+
 
     <style>
 
-        /* ================================
-           GENERAL
-        ================================= */
+        /* =========================================
+           RESET
+        ========================================= */
 
         * {
             margin: 0;
@@ -27,421 +32,783 @@
             box-sizing: border-box;
         }
 
+
+        /* =========================================
+           BODY
+        ========================================= */
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #eef3f7;
-            color: #172b4d;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
 
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
-        /* ================================
-           BUSINESS CARD
-        ================================= */
-
-        .card {
-            width: 100%;
-            max-width: 430px;
-            background: #ffffff;
-            border-radius: 24px;
-            overflow: hidden;
-
-            box-shadow:
-                0 20px 50px rgba(0, 0, 0, 0.15);
-
-            position: relative;
-        }
-
-
-        /* ================================
-           HEADER
-        ================================= */
-
-        .header {
             background:
                 linear-gradient(
                     135deg,
-                    #003b70,
-                    #0066a1
+                    #eaf1f7,
+                    #f8fafc
                 );
 
-            color: white;
-            padding: 30px 25px 70px;
+            color: #172b4d;
 
-            position: relative;
-            text-align: center;
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 25px;
+
         }
 
-        .header::after {
-            content: "";
-            position: absolute;
-            bottom: -35px;
-            left: 0;
+
+        /* =========================================
+           MAIN CARD
+        ========================================= */
+
+        .card {
 
             width: 100%;
-            height: 70px;
 
-            background: white;
+            max-width: 480px;
 
-            border-radius: 50% 50% 0 0;
-        }
+            background: #ffffff;
 
+            border-radius: 28px;
 
-        /* ================================
-           LOGO
-        ================================= */
+            overflow: hidden;
 
-        .logo {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: 2px;
+            box-shadow:
+                0 25px 60px
+                rgba(0, 0, 0, 0.16);
 
-            margin-bottom: 8px;
-        }
-
-        .logo-subtitle {
-            font-size: 11px;
-            letter-spacing: 3px;
-            opacity: 0.9;
-        }
-
-
-        /* ================================
-           PROFILE PHOTO
-        ================================= */
-
-        .profile-container {
             position: relative;
-            z-index: 5;
+
+        }
+
+
+        /* =========================================
+           TOP HEADER
+        ========================================= */
+
+        .header {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #002f5f,
+                    #005a91
+                );
+
+            min-height: 190px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            position: relative;
+
+            padding: 30px;
+
+            overflow: hidden;
+
+        }
+
+
+        /* Decorative circle */
+
+        .header::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+
+            height: 280px;
+
+            border-radius: 50%;
+
+            border: 1px solid
+                rgba(255,255,255,0.15);
+
+            top: -150px;
+
+            right: -100px;
+
+        }
+
+
+        .header::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+
+            height: 220px;
+
+            border-radius: 50%;
+
+            border: 1px solid
+                rgba(255,255,255,0.10);
+
+            bottom: -140px;
+
+            left: -100px;
+
+        }
+
+
+        /* =========================================
+           PKFZ LOGO
+        ========================================= */
+
+        .pkfz-logo {
+
+            width: 210px;
+
+            max-width: 75%;
+
+            height: auto;
+
+            display: block;
+
+            position: relative;
+
+            z-index: 2;
+
+            background: #ffffff;
+
+            padding: 10px;
+
+            border-radius: 14px;
+
+        }
+
+
+        /* =========================================
+           PROFILE AREA
+        ========================================= */
+
+        .profile-area {
+
+            position: relative;
 
             margin-top: -55px;
 
             display: flex;
+
             justify-content: center;
+
+            z-index: 5;
+
         }
 
-        .profile {
-            width: 150px;
-            height: 150px;
 
-            border-radius: 50%;
+        .profile {
+
+            width: 145px;
+
+            height: 145px;
 
             object-fit: cover;
 
-            border: 6px solid white;
+            object-position: center top;
+
+            border-radius: 50%;
+
+            border: 6px solid #ffffff;
+
+            background: #eeeeee;
 
             box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.20);
+                0 10px 30px
+                rgba(0,0,0,0.20);
 
-            background: #ddd;
         }
 
 
-        /* ================================
+        /* =========================================
            PERSONAL INFORMATION
-        ================================= */
+        ========================================= */
 
         .information {
-            padding: 20px 25px 10px;
+
             text-align: center;
+
+            padding:
+                20px
+                25px
+                10px;
+
         }
 
+
         .name {
-            font-size: 25px;
-            font-weight: 800;
+
             color: #003b70;
+
+            font-size: 27px;
+
+            font-weight: 800;
 
             line-height: 1.25;
 
-            margin-top: 10px;
         }
+
 
         .position {
+
+            margin-top: 8px;
+
+            color: #555555;
+
             font-size: 18px;
+
             font-weight: 600;
 
-            color: #555;
-
-            margin-top: 8px;
         }
+
 
         .department {
+
             display: inline-block;
 
-            margin-top: 8px;
+            margin-top: 10px;
 
-            padding: 6px 14px;
+            padding:
+                7px
+                18px;
 
-            border-radius: 20px;
+            border-radius: 30px;
 
             background: #e8f4fb;
-            color: #0066a1;
+
+            color: #005a91;
 
             font-size: 13px;
-            font-weight: 700;
 
-            letter-spacing: 1px;
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
         }
 
 
-        /* ================================
-           CONTACT INFORMATION
-        ================================= */
+        /* =========================================
+           DIVIDER
+        ========================================= */
+
+        .divider {
+
+            width: 70px;
+
+            height: 4px;
+
+            border-radius: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #7ac943,
+                    #0072bc
+                );
+
+            margin:
+                18px
+                auto
+                5px;
+
+        }
+
+
+        /* =========================================
+           CONTACT SECTION
+        ========================================= */
 
         .contacts {
-            padding: 20px 25px 5px;
+
+            padding:
+                10px
+                25px
+                5px;
+
         }
 
+
         .contact-item {
+
             display: flex;
+
             align-items: center;
 
             gap: 15px;
 
-            padding: 13px 0;
+            padding:
+                14px
+                0;
 
-            border-bottom: 1px solid #eeeeee;
+            border-bottom:
+                1px solid
+                #eeeeee;
+
         }
+
 
         .contact-item:last-child {
+
             border-bottom: none;
+
         }
 
-        .icon {
-            width: 45px;
-            height: 45px;
 
-            flex-shrink: 0;
+        /* =========================================
+           CONTACT ICON
+        ========================================= */
+
+        .icon {
+
+            width: 48px;
+
+            height: 48px;
+
+            min-width: 48px;
 
             border-radius: 50%;
 
             background: #003b70;
-            color: white;
+
+            color: #ffffff;
 
             display: flex;
-            justify-content: center;
+
             align-items: center;
 
+            justify-content: center;
+
             font-size: 20px;
+
+            box-shadow:
+                0 5px 12px
+                rgba(0,59,112,0.18);
+
         }
+
+
+        /* =========================================
+           CONTACT TEXT
+        ========================================= */
 
         .contact-text {
+
             text-align: left;
+
             overflow: hidden;
+
         }
 
+
         .contact-label {
+
             display: block;
+
+            color: #8a8a8a;
 
             font-size: 11px;
 
-            color: #888;
+            font-weight: 700;
 
-            margin-bottom: 3px;
+            letter-spacing: 1.2px;
 
             text-transform: uppercase;
-            letter-spacing: 1px;
+
+            margin-bottom: 4px;
+
         }
 
-        .contact-value {
-            font-size: 15px;
 
-            font-weight: 600;
+        .contact-value {
 
             color: #17365d;
 
+            font-size: 16px;
+
+            font-weight: 700;
+
             word-break: break-word;
+
         }
 
 
-        /* ================================
+        /* =========================================
            ACTION BUTTONS
-        ================================= */
+        ========================================= */
 
         .buttons {
-            padding: 20px 25px;
+
+            padding:
+                20px
+                25px
+                25px;
 
             display: grid;
 
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns:
+                1fr 1fr;
 
             gap: 12px;
+
         }
 
+
         .button {
+
             text-decoration: none;
 
             display: flex;
 
             justify-content: center;
+
             align-items: center;
 
             gap: 8px;
 
-            padding: 13px 10px;
+            min-height: 50px;
 
-            border-radius: 12px;
+            padding:
+                12px
+                10px;
+
+            border-radius: 13px;
 
             font-size: 14px;
 
-            font-weight: 700;
+            font-weight: 800;
 
             transition:
                 transform 0.2s ease,
                 box-shadow 0.2s ease;
+
+            cursor: pointer;
+
         }
+
 
         .button:hover {
-            transform: translateY(-2px);
+
+            transform:
+                translateY(-2px);
 
             box-shadow:
-                0 5px 15px rgba(0, 0, 0, 0.15);
+                0 8px 18px
+                rgba(0,0,0,0.15);
+
         }
+
+
+        .button:active {
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        /* CALL */
 
         .call {
+
             background: #003b70;
-            color: white;
+
+            color: #ffffff;
+
         }
+
+
+        /* WHATSAPP */
 
         .whatsapp {
+
             background: #25D366;
-            color: white;
+
+            color: #ffffff;
+
         }
+
+
+        /* EMAIL */
 
         .email {
+
             background: #e8f4fb;
+
             color: #003b70;
+
         }
+
+
+        /* SAVE CONTACT */
 
         .save {
-            background: #172b4d;
-            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #172b4d,
+                    #003b70
+                );
+
+            color: #ffffff;
+
         }
 
 
-        /* ================================
+        /* =========================================
            FOOTER
-        ================================= */
+        ========================================= */
 
         .footer {
-            background: #003b70;
 
-            color: white;
+            background:
+                linear-gradient(
+                    135deg,
+                    #002f5f,
+                    #005a91
+                );
+
+            color: #ffffff;
 
             text-align: center;
 
-            padding: 18px 15px;
+            padding:
+                20px
+                15px;
 
-            font-size: 11px;
-
-            letter-spacing: 1px;
         }
 
-        .footer strong {
-            display: block;
+
+        .footer-title {
 
             font-size: 13px;
 
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .footer-company {
+
+            font-size: 12px;
+
+            opacity: 0.85;
+
             margin-bottom: 5px;
-        }
 
-        .footer span {
-            opacity: 0.75;
         }
 
 
-        /* ================================
+        .footer-note {
+
+            font-size: 10px;
+
+            opacity: 0.65;
+
+        }
+
+
+        /* =========================================
            MOBILE
-        ================================= */
+        ========================================= */
 
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
 
             body {
-                padding: 10px;
+
+                padding: 12px;
+
             }
+
 
             .card {
-                border-radius: 18px;
+
+                border-radius: 22px;
+
             }
 
-            .name {
-                font-size: 21px;
+
+            .header {
+
+                min-height: 165px;
+
             }
 
-            .position {
-                font-size: 16px;
+
+            .pkfz-logo {
+
+                width: 185px;
+
             }
+
 
             .profile {
+
                 width: 130px;
+
                 height: 130px;
+
             }
 
-            .buttons {
-                grid-template-columns: 1fr;
+
+            .profile-area {
+
+                margin-top: -50px;
+
             }
+
+
+            .name {
+
+                font-size: 23px;
+
+            }
+
+
+            .position {
+
+                font-size: 16px;
+
+            }
+
+
+            .contact-value {
+
+                font-size: 14px;
+
+            }
+
+        }
+
+
+        /* =========================================
+           SMALL PHONES
+        ========================================= */
+
+        @media (max-width: 360px) {
+
+            .buttons {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .name {
+
+                font-size: 21px;
+
+            }
+
+
+            .profile {
+
+                width: 120px;
+
+                height: 120px;
+
+            }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
 
-    <div class="card">
 
-        <!-- HEADER -->
-        <div class="header">
+    <!-- =========================================
+         BUSINESS CARD
+    ========================================= -->
 
-            <div class="logo">
-                PKFZ
-            </div>
-
-            <div class="logo-subtitle">
-                PORT KLANG FREE ZONE
-            </div>
-
-        </div>
+    <main class="card">
 
 
-        <!-- PROFILE PHOTO -->
-        <div class="profile-container">
+        <!-- =====================================
+             PKFZ HEADER
+        ====================================== -->
 
-            <!-- Temporary image -->
+        <header class="header">
+
+            <img
+                class="pkfz-logo"
+                src="pkfz-logo.png"
+                alt="PKFZ - Port Klang Free Zone">
+
+        </header>
+
+
+        <!-- =====================================
+             PROFILE PHOTO
+        ====================================== -->
+
+        <div class="profile-area">
+
             <img
                 class="profile"
-                src="https://via.placeholder.com/150"
-                alt="Krishna Kumar">
+                src="krishna.jpg"
+                alt="Krishna Kumar A/L Kandasamy">
 
         </div>
 
 
-        <!-- PERSONAL INFORMATION -->
-        <div class="information">
+        <!-- =====================================
+             NAME / POSITION
+        ====================================== -->
 
-            <div class="name">
+        <section class="information">
+
+            <h1 class="name">
                 Krishna Kumar A/L Kandasamy
-            </div>
+            </h1>
 
-            <div class="position">
+
+            <p class="position">
                 General Manager
-            </div>
+            </p>
+
 
             <div class="department">
                 ENGINEERING
             </div>
 
-        </div>
+
+            <div class="divider"></div>
+
+        </section>
 
 
-        <!-- CONTACT INFORMATION -->
-        <div class="contacts">
+        <!-- =====================================
+             CONTACT DETAILS
+        ====================================== -->
+
+        <section class="contacts">
+
 
             <!-- EMAIL -->
+
             <div class="contact-item">
 
                 <div class="icon">
@@ -451,7 +818,7 @@
                 <div class="contact-text">
 
                     <span class="contact-label">
-                        Email
+                        Company Email
                     </span>
 
                     <span class="contact-value">
@@ -464,6 +831,7 @@
 
 
             <!-- MOBILE -->
+
             <div class="contact-item">
 
                 <div class="icon">
@@ -486,6 +854,7 @@
 
 
             <!-- OFFICE -->
+
             <div class="contact-item">
 
                 <div class="icon">
@@ -508,6 +877,7 @@
 
 
             <!-- DEPARTMENT -->
+
             <div class="contact-item">
 
                 <div class="icon">
@@ -528,11 +898,18 @@
 
             </div>
 
-        </div>
+
+        </section>
 
 
-        <!-- BUTTONS -->
-        <div class="buttons">
+        <!-- =====================================
+             ACTION BUTTONS
+        ====================================== -->
+
+        <section class="buttons">
+
+
+            <!-- CALL -->
 
             <a
                 class="button call"
@@ -543,15 +920,20 @@
             </a>
 
 
+            <!-- WHATSAPP -->
+
             <a
                 class="button whatsapp"
                 href="https://wa.me/60166623604"
-                target="_blank">
+                target="_blank"
+                rel="noopener noreferrer">
 
-                WhatsApp
+                💬 WhatsApp
 
             </a>
 
+
+            <!-- EMAIL -->
 
             <a
                 class="button email"
@@ -562,31 +944,46 @@
             </a>
 
 
+            <!-- SAVE CONTACT -->
+
             <a
                 class="button save"
-                href="#">
+                href="krishna.vcf"
+                download>
 
                 👤 Save Contact
 
             </a>
 
-        </div>
+
+        </section>
 
 
-        <!-- FOOTER -->
-        <div class="footer">
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
 
-            <strong>
+        <footer class="footer">
+
+            <div class="footer-title">
                 PEOPLE | PARTNERSHIPS | PROGRESS
-            </strong>
+            </div>
 
-            <span>
+
+            <div class="footer-company">
                 Port Klang Free Zone
-            </span>
+            </div>
 
-        </div>
 
-    </div>
+            <div class="footer-note">
+                Digital Business Card
+            </div>
+
+        </footer>
+
+
+    </main>
+
 
 </body>
 
